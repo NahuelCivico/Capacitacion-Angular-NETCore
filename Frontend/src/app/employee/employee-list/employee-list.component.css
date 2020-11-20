@@ -7,3 +7,7 @@ table {
     align-items: center;
     justify-content: space-between;
 }
+
+.example-full-width {
+width: 50%;
+}

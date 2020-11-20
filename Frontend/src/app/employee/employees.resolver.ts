@@ -1,15 +1,15 @@
 import { Injectable } from '@angular/core';
 import { Resolve, ActivatedRouteSnapshot } from '@angular/router';
 import { Observable } from 'rxjs';
-import { CategoryService } from './category.service';
+import { EmployeeService } from './employee.service';
 
 @Injectable({providedIn: 'root'})
-export class CategoriesResolver implements Resolve<Observable<any>> {
+export class EmployeesResolver implements Resolve<Observable<any>> {
     constructor(
-        private categoryService: CategoryService
+        private employeeService: EmployeeService
     ) { }
 
     resolve(route: ActivatedRouteSnapshot) {
-        return this.categoryService.getAll();
+        return this.employeeService.getAll();
     }
 }

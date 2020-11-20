@@ -39,7 +39,6 @@ namespace Backend
             {
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
-            //services.AddGraphQLAuth();
             services.AddAutoMapper(typeof(Startup));
             this.ConfigureIoC(services);
         }
@@ -74,11 +73,13 @@ namespace Backend
         private void ConfigureRepositories(IServiceCollection services)
         {
             services.AddTransient<ICategoryRepository, CategoryRepository>();
+            services.AddTransient<IEmployeeRepository, EmployeeRepository>();
         }
 
         private void ConfigureApplicationServices(IServiceCollection services)
         {
             services.AddTransient<ICategoryService, CategoryService>();
+            services.AddTransient<IEmployeeService, EmployeeService>();
         }
     }
 }

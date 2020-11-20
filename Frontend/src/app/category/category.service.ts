@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { map } from 'rxjs/operators';
 import { Category } from './category.model';
 import { Observable } from 'rxjs';
 
@@ -18,7 +17,7 @@ export class CategoryService {
   private categoryUrl = environment.baseUrl + 'category';
 
   constructor(
-    private httpClient: HttpClient,
+    private httpClient: HttpClient
   ) { }
 
   public getAll(): Observable<Category[]> {

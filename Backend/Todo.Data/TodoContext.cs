@@ -29,9 +29,15 @@ namespace Todo.Data
             {
                 entity.HasKey(e => e.Id);
             });
+
+            builder.Entity<Entities.Employee>(entity =>
+            {
+                entity.HasKey(e => e.Id);
+            });
         }
 
         public virtual DbSet<Entities.Category> Categories { get; set; }
         public virtual DbSet<Entities.Todo> Todos { get; set; }
+        public virtual DbSet<Entities.Employee> Employees { get; set; }
     }
 }

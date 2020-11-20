@@ -13,6 +13,8 @@ namespace Todo.API.Mapper
         {
             CreateMap<CategoryDTO, Domain.Category>();
             CreateMap<Domain.Category, Data.Entities.Category>().ReverseMap();
+            CreateMap<EmployeeDTO, Domain.Employee>();
+            CreateMap<Domain.Employee, Data.Entities.Employee>().ReverseMap();
         }
     }
 }
